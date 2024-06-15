@@ -1,0 +1,143 @@
+{
+  "name":"Manjiro-Sano-md",
+  "description":"Lazmiii•) You have to fill in this box with thought and understanding because you won't be able to change it on WhatsApp again, okay",
+  "keywords":["bot","node","baileys","whatsapp"],
+  "logo":"https://telegra.ph/file/2645fb9536dad7eda6aee.jpg",
+  "repository":"https://github.com/Cod3Uchiha/Manjiro-Sano-md",
+  "succes_url":"/",
+  "stack":"container",
+     "env":{
+    "PREFIX":
+    {
+      "description":"Enter a symbol for your bot's prefix, e.g. . , ! ? Enter only one symbol",
+      "value":".",
+      "required":true
+    },
+    "AUTO_READ_MESSAGES":
+    {
+      "description":"If you want your bot to mark messages as read, enter |yes|, otherwise enter |no|", 
+      "value":"no", 
+      "required":true 
+    }, 
+    "AUTO_READ_STATUS":
+    {
+      "description":"If you want your bot to auto-see status updates, enter |yes|, otherwise enter |no|",
+      "value":"yes",
+      "required":true
+    }, "AUTO_DOWNLOAD_STATUS":
+    {
+      "description":"If you want your bot to save and send status updates to your inbox, enter |yes|, otherwise enter |no|",
+      "value":"no",
+      "required":true
+    }
+    ,
+     "PM_PERMIT" :
+     {
+      "description":"If you want anyone to be able to use your bot in private messages, enter |no|, otherwise enter |no|",
+      "value":"no",
+      "required":true
+    }
+    ,
+    "BOT_NAME" : {
+
+      "description":"Enter your bot's name",
+      "value":"Manjiro-Sano-md",
+      "required":true
+
+    } ,
+     "BOT_MENU_LINKS" : {
+
+      "description":"Bot ke menu ki pic ka Link Likho",
+      "value":"https://telegra.ph/file/2645fb9536dad7eda6aee.jpg",
+      "required":false
+
+     },
+    "PUBLIC_MODE":
+    {
+      "description":"If you want anyone to be able to use your bot, enter |yes|, otherwise enter |no|",
+      "value":"yes",
+      "required":true
+    }
+        ,
+    "HEROKU_API_KEY": {
+    "description": "Enter your Heroku API key",
+     "required":true
+    },
+   "HEROKU_APP_NAME": {
+    "description": "Enter the name of your Heroku app",
+     "required" :true
+    }  
+          ,
+    "SESSION_ID":
+    {
+      "description":"Enter your bot's session ID",   
+      "value":"",
+      "required": true
+
+    },
+    "OWNER_NAME":
+    {
+
+    "desc": "Enter your name",
+    "required": true,
+    "value": "Cod3Uchiha"
+  },
+    "OWNER_NUMBER":
+  {
+
+    "desc": "Enter your phone number (without the + sign, e.g. 263xxxxxx)",
+    "required":true,
+    "value": "263785028126"
+  },
+    "WARN_COUNT":
+  {
+    "desc": "Enter the number of warnings before a user is blocked or removed from a group",
+    "required": true,
+    "value": "2"
+  },
+    "CHAT_BOT":
+    {
+      "desc": "If you want your bot to respond to messages, enter |yes|, otherwise enter |no|",
+      "required": true, 
+       "value": "no" 
+    }, 
+  "STARTING_BOT_MESSAGE":
+  {
+    "description": "If you want a starting message to be sent when the bot is connected, enter |yes|, otherwise enter |no|",
+    "required": true,
+    "value": "no"
+  },
+  "PRESENCE":{
+    "description":"Enter |online| to always show the bot as online, |typing| to show 'is typing...', |recording| to show 'is recording...', or leave blank for no presence",
+    "value":"",
+    "required": false
+  }  
+  },
+
+
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+
+  "formation": {
+                "worker": {
+                        "quantity": 1,
+                        "size": "basic"
+                }
+        },
+
+  "addons":[
+    {
+      "plan":"heroku-postgresql"
+    }
+  ]
+}
